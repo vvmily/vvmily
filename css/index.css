@@ -6,6 +6,7 @@
 	height: 30px;
 	width: 100%;
 	background:#2BB388;
+	min-width: 1200px;
 }
 .home-tool-links{
 	width: 100%;
@@ -23,6 +24,7 @@
 	background: url(../images/home-bg01.png) no-repeat;
 	background-size: cover;
 	position: relative;
+	min-width: 1200px;
 }
 .fade-combtn{
 	position: absolute;
