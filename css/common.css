@@ -1,0 +1,148 @@
+@charset "UTF-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin: 0; padding: 0; }
+ul,ol{list-style:none;}
+a{text-decoration:none;color: #333333}
+/*a:hover{color: #da3a3a}*/
+a:focus{outline: none}
+a:focus{border: none}
+img{border:0;vertical-align:middle;}
+input,button{vertical-align:middle;border:none;}
+textarea{border:none;resize:none;}
+input, textarea {box-sizing: content-box;background: 0 0;font-family: "Microsoft YaHei"}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+    color: #acacac;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#acacac;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#acacac;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#acacac;
+}
+.rt{float:right;}
+.lf{float: left;}
+body{color: #000;font-family: "Microsoft YaHei"}
+
+/*清除浮动*/
+.clearfix{*zoom:1;} /* 针对IE7 hack，触发IE7的haslayout，以清除浮动 */
+.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
+.clearfix:after{clear:both;}
+table tr td,table{border-collapse:collapse;}
+
+input[type=text]:focus,input[type=text]:active{
+    box-shadow: none;
+    border: none;
+}
+/*通用样式*/
+/*省略号：添加元素必定包含块级元素上（有float、block、inline-block等）*/
+.ellipsis{
+    display: block;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*1、改变滚动条样式：
+*使用方法：
+*在需要改变滚动条的标签元素上添加class="bsfw-rdfw"即可
+*
+*/
+/*chrome*/
+.bsfw-rdfw::-webkit-scrollbar-track
+{
+    background-color: #eee;
+}
+/*定义滚动条高宽及背景*/
+.bsfw-rdfw::-webkit-scrollbar
+{
+    width: 4px;
+    /*background: url(../images/py-main-icon16.png);*/
+}
+/*定义滚动条*/
+.bsfw-rdfw::-webkit-scrollbar-thumb
+{
+    background-color: #d0d0d0;
+}
+/*IE*/
+.bsfw-rdfw{
+/*三角箭头的颜色*/
+    scrollbar-arrow-color:#eee;
+/*滚动条滑块按钮的颜色*/
+    scrollbar-face-color:#d0d0d0;
+/*滚动条整体颜色*/
+    scrollbar-highlight-color:#d0d0d0;
+/*滚动条阴影*/
+    scrollbar-shadow-color: #eee;
+/*滚动条轨道颜色*/
+    scrollbar-track-color: #eee;
+}
+/*
+*2、鼠标经过图片逐渐放大：
+*（可自行修改）
+*/
+/*img{
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+img:hover{
+    -webkit-transform: translate3d(0, 0, 0px) scale(1.05);
+    -moz-transform: translate3d(0, 0, 0px) scale(1.05);
+    -ms-transform: translate3d(0, 0, 0px) scale(1.05);
+    -o-transform: translate3d(0, 0, 0px) scale(1.05);
+    transform: translate3d(0, 0, 0px) scale(1.05);
+}*/
+
+/*
+*3、鼠标经过抖动动画：
+*（可自行修改）
+*/
+/*a:hover img{
+    animation:myfirst 0.5s;
+    -moz-animation:myfirst 0.5s; 
+    -webkit-animation:myfirst 0.5s; 
+    -o-animation:myfirst 0.5s;
+}*/
+@keyframes myfirst
+{
+    0%   {transform: rotate(10deg);}
+    20%  {transform: rotate(-10deg);}
+    40%  {transform: rotate(10deg);}
+    60% {transform: rotate(-10deg);}
+    80% {transform: rotate(10deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+    0%   {transform: rotate(10deg);}
+    20%  {transform: rotate(-10deg);}
+    40%  {transform: rotate(10deg);}
+    60% {transform: rotate(-10deg);}
+    80% {transform: rotate(5deg);}
+    100% {transform: rotate(0deg);}
+}
+    @-webkit-keyframes myfirst /* Safari 和 Chrome */
+    {
+        0%   {transform: rotate(10deg);}
+        20%  {transform: rotate(-10deg);}
+        40%  {transform: rotate(10deg);}
+        60% {transform: rotate(-10deg);}
+        80% {transform: rotate(5deg);}
+        100% {transform: rotate(0deg);}
+    }
+
+@-o-keyframes myfirst /* Opera */
+{
+    0%   {transform: rotate(10deg);}
+    20%  {transform: rotate(-10deg);}
+    40%  {transform: rotate(10deg);}
+    60% {transform: rotate(-10deg);}
+    80% {transform: rotate(5deg);}
+    100% {transform: rotate(0deg);}
+}
