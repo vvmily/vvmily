@@ -29,7 +29,7 @@ $(document).ready(function(){
 		function homeWork(){
 			var len = $(".home-works-item").children().length;
 			i = i < len ? i : 0;
-			$(".home-works-item").children(".home-works-conts").eq(i).find(".home-works-detail").show(500).parent().siblings().find(".home-works-detail").hide(200);
+			$(".home-works-item").children(".home-works-conts").eq(i).find(".home-works-detail").stop().show(500).parent().siblings().find(".home-works-detail").stop().hide(200);
 			i++;
 		};
 	}
