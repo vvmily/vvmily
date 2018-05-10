@@ -216,8 +216,12 @@
     SwitchTransform();
     function SwitchTransform(){
       $banner.stop().eq(index).fadeIn(time).siblings().fadeOut(time);
-      $num.eq(index).addClass(className).siblings().removeClass(className);
-      $text.eq(index).show().siblings().hide();
+      if($num){
+        $num.eq(index).addClass(className).siblings().removeClass(className);
+      };
+      if($text){
+        $text.eq(index).show().siblings().hide();
+      }
       if($indy){
         $lendy.text(len);
         $indy.text(index+1);
@@ -230,7 +234,8 @@
       SwitchTransform();
     }
     var play=setInterval(SwitchPlay,playTime);
-    $num.hover(function(){
+    if($num){
+      $num.hover(function(){
       clearInterval(play);
       play=null;
       index=$num.index($(this));
@@ -238,6 +243,7 @@
     },function(){
       play=setInterval(SwitchPlay,playTime);
     });
+    }
     if(option.prev){
       var $left=$(option.prev);
       $left.click(function(){

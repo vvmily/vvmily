@@ -24,10 +24,27 @@
 .home-head-box{
 	width: 100%;
 	height: 500px;
-	background: url(../images/home-bg01.png) no-repeat;
-	background-size: cover;
+	/*background: url(../images/home-bg01.png) no-repeat;*/
+	/*background-size: cover;*/
 	position: relative;
 	min-width: 1200px;
+}
+.home-back-banner{
+	position: absolute;
+	height: 500px;
+	width: 100%;
+}
+.home-back-banner p{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 500px;
+	width: 100%;
+}
+.home-back-banner p img{
+	display: block;
+	height: 500px;
+	width: 100%;
 }
 .fade-combtn{
 	position: absolute;
@@ -51,6 +68,7 @@
 	border-radius: 10px 0 0 10px;
 }
 .home-head-list{
+	position: relative;
 	height: 70px;
 	width: 100%;
 	box-sizing: border-box;
@@ -100,6 +118,7 @@
 }
 .home-head-des{
 	margin-top: 100px;
+	position: relative;
 }
 .home-head-des a{
 	display: block;
@@ -433,8 +452,8 @@
 .home-works-detail{
 	display: none;
 }
-.home-works-detail.dis{
-	display: block;
+.home-works-detail{
+	/*display: block;*/
 	position: absolute;
 	top: 0px;
 	left: 0px;
