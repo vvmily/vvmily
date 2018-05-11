@@ -83,7 +83,8 @@ input[type=text]:focus,input[type=text]:active{
 *2、鼠标经过图片逐渐放大：
 *（可自行修改）
 */
-.home-images-item a img{
+.home-images-item a img,
+.home-works-conts p img{
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -96,6 +97,13 @@ input[type=text]:focus,input[type=text]:active{
     -ms-transform: translate3d(0, 0, 0px) scale(1.05);
     -o-transform: translate3d(0, 0, 0px) scale(1.05);
     transform: translate3d(0, 0, 0px) scale(1.05);
+}
+.home-works-conts:hover p img{
+    -webkit-transform: translate3d(0, 0, 0px) scale(0.9);
+    -moz-transform: translate3d(0, 0, 0px) scale(0.9);
+    -ms-transform: translate3d(0, 0, 0px) scale(0.9);
+    -o-transform: translate3d(0, 0, 0px) scale(0.9);
+    transform: translate3d(0, 0, 0px) scale(0.9);
 }
 
 /*
@@ -145,4 +153,63 @@ input[type=text]:focus,input[type=text]:active{
     60% {transform: rotate(-10deg);}
     80% {transform: rotate(5deg);}
     100% {transform: rotate(0deg);}
+}
+
+
+
+
+
+.home-head-nav li a:hover,
+.home-images-item a.item-more:hover span,
+.home-images-item a.item-tit:hover span:first-child{
+    animation:mysecond 0.5s;
+    -moz-animation:mysecond 0.5s; 
+    -webkit-animation:mysecond 0.5s; 
+    -o-animation:mysecond 0.5s;
+}
+@keyframes mysecond
+{
+    0%   {transform: translate(-5%,0px);}
+    20%  {transform: translate(-10%,0px);}
+    30%  {transform: translate(-5%,0px);}
+    50% {transform: translate(0px,0px);}
+    70% {transform: translate(5%,0px);}
+    80% {transform: translate(10%,0px);}
+    90% {transform: translate(5%,0px);}
+    100% {transform: translate(0px,0px);}
+}
+
+@-moz-keyframes mysecond /* Firefox */
+{
+    0%   {transform: translate(-5%,0px);}
+    20%  {transform: translate(-10%,0px);}
+    30%  {transform: translate(-5%,0px);}
+    50% {transform: translate(0px,0px);}
+    70% {transform: translate(5%,0px);}
+    80% {transform: translate(10%,0px);}
+    90% {transform: translate(5%,0px);}
+    100% {transform: translate(0px,0px);}
+}
+@-webkit-keyframes mysecond /* Safari 和 Chrome */
+{
+    0%   {transform: translate(-5%,0px);}
+    20%  {transform: translate(-10%,0px);}
+    30%  {transform: translate(-5%,0px);}
+    50% {transform: translate(0px,0px);}
+    70% {transform: translate(5%,0px);}
+    80% {transform: translate(10%,0px);}
+    90% {transform: translate(5%,0px);}
+    100% {transform: translate(0px,0px);}
+}
+
+@-o-keyframes mysecond /* Opera */
+{
+    0%   {transform: translate(-5%,0px);}
+    20%  {transform: translate(-10%,0px);}
+    30%  {transform: translate(-5%,0px);}
+    50% {transform: translate(0px,0px);}
+    70% {transform: translate(5%,0px);}
+    80% {transform: translate(10%,0px);}
+    90% {transform: translate(5%,0px);}
+    100% {transform: translate(0px,0px);}
 }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<style type="text/css">
+	*{
+		margin: 0;padding: 0;
+	}
+	body{
+		background: #ccc;
+	}
+	.collec-con{
+		display: none;
+		position: fixed;
+		height: 70px;
+		width: 200px;
+		/*background: rgba(0,0,0,0.3);*/
+		background: #fff;
+		top: 50%;
+		left: 50%;
+		margin: -35px 0 0 -100px;
+		z-index: 1000000;
+		border: 1px solid #f9f9f9;
+		border-radius: 5px;
+		box-shadow: 0px 0px 3px #ccc;
+	}
+	.collec-tit{
+		line-height: 30px;
+		color: #333;
+		font-size: 16px;
+		text-align: center;
+		margin-top: 10px;
+	}
+	.collec-time{
+		line-height: 26px;
+		color: #333;
+		font-size: 12px;
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+<button onclick="disp_alert()" style="cursor: pointer;">收藏</button>
+<div class="collection">
+	<div class="collec-con">
+		<p id="collecBox" class="collec-tit">收藏成功</p>
+		<p id="collecTime" class="collec-time"><span>3</span>s后关闭</p>
+	</div>
+	<script type="text/javascript">
+		var tit = "收藏成功";
+		function disp_alert()
+		{	
+			var time = 2000;//关闭时间
+			var i = 2; //显示多少秒后关闭
+			var d = document.getElementById("collecBox");
+			var cn = document.getElementById("collecTime").firstChild;
+			cn.innerHTML = i;
+			d.parentNode.style.display = 'block';
+			d.innerHTML = tit=="收藏成功" ? "收藏成功" : "取消收藏成功";
+			tit = tit=="收藏成功" ? "取消收藏成功" : "收藏成功";
+			var ct = setInterval(function(){
+				i--;
+				cn.innerHTML = i
+				if(i<0){
+					clearInterval(ct);
+					d.parentNode.style.display = 'none';
+				}
+			},1000);
+		}
+	</script>
+</div>
+</body>
+</html>
