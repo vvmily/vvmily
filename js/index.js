@@ -33,6 +33,9 @@ $(document).ready(function(){
 	function initData(){
 		homeBanWork();
 	}
+	/**
+	 * 判断是pc还是移动端用户
+	 */
 	if(getClientInfo()=="PC"){
 		$(document).scroll(function(){
 			var topH = $(document).scrollTop();
@@ -59,15 +62,13 @@ $(document).ready(function(){
 		},800);
 		$(".home-journal-detail").animate({
 			'right':0
-		},1000)
-		
-
+		},1000);
 		$(".home-message-list a.left").animate({
 			'left':0
 		},800);
 		$(".home-message-list a.right").animate({
 			'right':0
-		},800)
+		},800);
 	}
 
 	/**

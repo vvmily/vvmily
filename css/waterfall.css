@@ -1,0 +1,83 @@
+.water-main{
+	position: relative;
+}
+.water-box{
+	width: 200px;
+	height: auto;
+	float: left;
+	margin: 10px;
+	cursor: pointer;
+	border:1px solid #eee;
+	border-radius: 3px;
+	box-shadow: 0px 0px 3px #ccc;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.water-pic{
+	position: relative;
+	overflow: hidden;
+}
+.water-pic img{
+	box-sizing: border-box;
+	display: block;
+	height: auto;
+	width: 100%;
+	/*padding:10px;*/
+}
+.pic-prompt{
+	position: absolute;
+    bottom: -200px;
+    /*top: -200px;*/
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    box-sizing: border-box;
+    /*display: none;*/
+}
+.pic-prompt span{
+	display: block;
+	height: 60px;
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	margin-top: -30px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-family: "华文楷体";
+    line-height: 30px;
+}
+
+
+
+
+
+
+
+
+
+.water-prompt{
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 400px;
+	width: 500px;
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	box-shadow:0px 0px 5px #333;
+}
+.water-prompt img{
+	display: block;
+	height: auto;
+	width: auto;
+	margin:0 auto;
+	box-sizing: border-box;
+	padding:20px;
+	border-radius: 2px;
+	max-width: 460px;
+	max-height: 360px;
+}
