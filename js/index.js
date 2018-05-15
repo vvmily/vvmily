@@ -1,5 +1,23 @@
 $(document).ready(function(){
 	/**
+	 * 获取客户端信息
+	 *
+	 * @return     {string}  The client information.
+	 */
+	function getClientInfo(){  
+		var userAgentInfo = navigator.userAgent;  
+		var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+		var agentinfo = null;  
+		for (var i = 0; i < Agents.length; i++) {  
+			if (userAgentInfo.indexOf(Agents[i]) > 0) { agentinfo = userAgentInfo; break; }  
+		}  
+		if(agentinfo){
+			return agentinfo;
+		}else{
+			return "PC"; 
+		}     
+	};
+	/**
 	 * 首页背景轮播
 	 */
 	jQuery(".home-back-banner p").SwitchFade({
@@ -15,28 +33,43 @@ $(document).ready(function(){
 	function initData(){
 		homeBanWork();
 	}
-	$(document).scroll(function(){
-		var topH = $(document).scrollTop();
-		if(topH>200){
-			$(".home-journal-link").animate({
-				'left':0
-			},800);
-			$(".home-journal-detail").animate({
-				'right':0
-			},1000)
-		};
-		if(topH>800){
-			$(".home-message-list a.left").animate({
-				'left':0
-			},800);
-			$(".home-message-list a.right").animate({
-				'right':0
-			},800)
-		}
-	});
-	function rzBoxOneLoading(){
+	if(getClientInfo()=="PC"){
+		$(document).scroll(function(){
+			var topH = $(document).scrollTop();
+			if(topH>200){
+				$(".home-journal-link").animate({
+					'left':0
+				},800);
+				$(".home-journal-detail").animate({
+					'right':0
+				},1000)
+			};
+			if(topH>800){
+				$(".home-message-list a.left").animate({
+					'left':0
+				},800);
+				$(".home-message-list a.right").animate({
+					'right':0
+				},800)
+			}
+		});
+	}else{
+		$(".home-journal-link").animate({
+			'left':0
+		},800);
+		$(".home-journal-detail").animate({
+			'right':0
+		},1000)
+		
 
+		$(".home-message-list a.left").animate({
+			'left':0
+		},800);
+		$(".home-message-list a.right").animate({
+			'right':0
+		},800)
 	}
+
 	/**
 	 *轮播作品集
 	 */
