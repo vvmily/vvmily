@@ -1,5 +1,11 @@
 $(window).on('load',function(){
+	    
 	waterFall();
+	getPositionFixed();
+	$(window).resize(function(){
+		waterFall();
+		getPositionFixed();
+	});
 	var data = {
 		"datas":[],//假设这是从后台请求的数据
 		"imgAllNum":100
@@ -12,10 +18,11 @@ $(window).on('load',function(){
 	$(window).on('scroll',function(){
 		var len = $(".water-main").children().length;
 		if(scrollBool()){
+
 			$.each(data.datas,function(key,val){
 				var cBox = '<div class="water-box">'+
 							'<div class="water-pic">'+
-								'<img src="images/water00'+ $(val).attr('src')+'">'+
+								'<img class="lazy" src="images/loading.gif" data-original="images/water00'+ $(val).attr('src')+'">'+
 								'<p class="pic-prompt"><span>图片说明</span></p>'+
 							'</div>'+
 						'</div>';
@@ -45,7 +52,10 @@ $(window).on('load',function(){
 			},300);	
 			$(".water-prompt").empty().hide();
 		})
-	}
+	};
+	$(".go-top-header").click(function(){
+		$("html,body").animate({scrollTop:0}, 500);
+	});
 	
 });
 /**
@@ -82,6 +92,7 @@ function waterFall(){
 			boxArr[minHIndex] += itemH;
 		}
 	});
+	$("img.lazy").lazyload();
 };
 function scrollBool(){
 	var boxLast = $(".water-main>div.water-box").last();
@@ -90,3 +101,16 @@ function scrollBool(){
 	var documentH = $(window).height();
 	return (boxOffsetTopH < scrollTop + documentH) ? true : false;
 }
+/**
+ * 
+ */
+ function getPositionFixed(){
+	var box = $(".water-box");
+	var boxItemW = box.outerWidth(true);
+	var clientW = $(document).width();//屏宽
+	var boxNum = Math.floor(clientW/boxItemW);//每行放多少列
+	$(".go-top-header").css({
+		'right':((clientW-(boxNum*boxItemW))/2-62)<62?0:(clientW-(boxNum*boxItemW))/2-62
+	});
+
+ }

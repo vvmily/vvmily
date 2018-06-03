@@ -7,6 +7,7 @@ $(window).on('load',function(){
 	$(document).scroll(function(){
 		getScrollheight()
 	});
+	// nav鼠标经过
 	$(".personal-btns li").hover(function(){
 		$(this).children("p").animate({
 			'top':-40
@@ -19,6 +20,12 @@ $(window).on('load',function(){
 			'top':0
 		},100);
 	});
+	// 专业技能
+	$(".item-info-tabs tr td.info span").hover(function(){
+		$(this).siblings(".modal").show(500).parents("tr").siblings().find(".modal").hide();
+	},function(){
+		$(".item-info-tabs tr td.info .modal").hide();
+	});
 });
 /**
  * 获取浏览器可视宽高
@@ -29,7 +36,9 @@ function getWindWidthHeight(){
 	$(".personal-list").width(wid).height(heig);
 	$(".personal-opcity").width(wid).height(heig);
 };
-
+/**
+ * 滚动大于100，nav固定在头部
+ */
 function getScrollheight(){
 	var topH = $(document).scrollTop();
 	console.log(topH)
