@@ -110,7 +110,7 @@ function scrollBool(){
 	var clientW = $(document).width();//屏宽
 	var boxNum = Math.floor(clientW/boxItemW);//每行放多少列
 	$(".go-top-header").css({
-		'right':((clientW-(boxNum*boxItemW))/2-62)<62?0:(clientW-(boxNum*boxItemW))/2-62
+		'right':((clientW-(boxNum*boxItemW))/2-62)<62?10:(clientW-(boxNum*boxItemW))/2-62
 	});
 
  }
